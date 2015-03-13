@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3795A131AA85C5300DA9073"
-               BuildableName = "SpotApp.app"
-               BlueprintName = "SpotApp"
-               ReferencedContainer = "container:SpotApp.xcodeproj">
+               BuildableName = "TrainSpot.app"
+               BlueprintName = "TrainSpot"
+               ReferencedContainer = "container:TrainSpot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3795A281AA85C5400DA9073"
-               BuildableName = "SpotAppTests.xctest"
-               BlueprintName = "SpotAppTests"
-               ReferencedContainer = "container:SpotApp.xcodeproj">
+               BuildableName = "TrainSpotTests.xctest"
+               BlueprintName = "TrainSpotTests"
+               ReferencedContainer = "container:TrainSpot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C3795A281AA85C5400DA9073"
-               BuildableName = "SpotAppTests.xctest"
-               BlueprintName = "SpotAppTests"
-               ReferencedContainer = "container:SpotApp.xcodeproj">
+               BuildableName = "TrainSpotTests.xctest"
+               BlueprintName = "TrainSpotTests"
+               ReferencedContainer = "container:TrainSpot.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3795A131AA85C5300DA9073"
-            BuildableName = "SpotApp.app"
-            BlueprintName = "SpotApp"
-            ReferencedContainer = "container:SpotApp.xcodeproj">
+            BuildableName = "TrainSpot.app"
+            BlueprintName = "TrainSpot"
+            ReferencedContainer = "container:TrainSpot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -72,13 +72,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3795A131AA85C5300DA9073"
-            BuildableName = "SpotApp.app"
-            BlueprintName = "SpotApp"
-            ReferencedContainer = "container:SpotApp.xcodeproj">
+            BuildableName = "TrainSpot.app"
+            BlueprintName = "TrainSpot"
+            ReferencedContainer = "container:TrainSpot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -90,13 +91,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C3795A131AA85C5300DA9073"
-            BuildableName = "SpotApp.app"
-            BlueprintName = "SpotApp"
-            ReferencedContainer = "container:SpotApp.xcodeproj">
+            BuildableName = "TrainSpot.app"
+            BlueprintName = "TrainSpot"
+            ReferencedContainer = "container:TrainSpot.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
