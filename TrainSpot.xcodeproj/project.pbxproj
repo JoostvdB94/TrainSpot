@@ -15,6 +15,7 @@
 		C3795A241AA85C5400DA9073 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3795A221AA85C5400DA9073 /* LaunchScreen.xib */; };
 		C3795A301AA85C5400DA9073 /* SpotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3795A2F1AA85C5400DA9073 /* SpotAppTests.swift */; };
 		C38621D91AB2F52B0003F7BB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38621D81AB2F52B0003F7BB /* MenuViewController.swift */; };
+		C3C371601AC56290004C28ED /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3715F1AC56290004C28ED /* SpotsViewController.swift */; };
 		C3D344CF1AB332CF0041AA2C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D344CE1AB332CF0041AA2C /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		C3795A2E1AA85C5400DA9073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3795A2F1AA85C5400DA9073 /* SpotAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotAppTests.swift; sourceTree = "<group>"; };
 		C38621D81AB2F52B0003F7BB /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C3C3715F1AC56290004C28ED /* SpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
 		C3D344CE1AB332CF0041AA2C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				C3795A201AA85C5300DA9073 /* Images.xcassets */,
 				C3795A221AA85C5400DA9073 /* LaunchScreen.xib */,
 				C3795A171AA85C5300DA9073 /* Supporting Files */,
+				C3C3715F1AC56290004C28ED /* SpotsViewController.swift */,
 			);
 			name = TrainSpot;
 			path = SpotApp;
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3C371601AC56290004C28ED /* SpotsViewController.swift in Sources */,
 				C3795A1C1AA85C5300DA9073 /* ViewController.swift in Sources */,
 				C38621D91AB2F52B0003F7BB /* MenuViewController.swift in Sources */,
 				C30A71421AB30282003B384F /* NewSpotController.swift in Sources */,
@@ -352,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SpotApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
@@ -364,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = SpotApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
