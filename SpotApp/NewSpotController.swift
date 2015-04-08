@@ -8,8 +8,10 @@
 
 import UIKit
 
-class NewSpotController: UITableViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class NewSpotController: UITableViewController,UITableViewDelegate, UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
+    @IBOutlet weak var spotImageView: UIImageView!
+    
     @IBAction func onTouchCameraButton(sender: UIButton) {
         
         if(UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)){

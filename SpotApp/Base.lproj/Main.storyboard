@@ -25,7 +25,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Spot een trein" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M2Y-pl-BuM">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -43,7 +43,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Mijn gespotte treinen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="we8-e9-13O">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -61,7 +61,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Spotplaatsen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tnL-1x-d8S">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -79,7 +79,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Instellingen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="39r-vt-XuH">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -105,7 +105,7 @@
         <!--Spotten-->
         <scene sceneID="5Rg-vu-q1j">
             <objects>
-                <tableViewController id="gDN-if-rAf" customClass="NewSpotController" customModule="TrainSpot" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gDN-if-rAf" customClass="NewSpotController" customModule="TrainSpot" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="beW-q4-W8E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,16 +152,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Treintype" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BKb-aM-rVv">
-                                                    <rect key="frame" x="12" y="7" width="576" height="30"/>
+                                                    <rect key="frame" x="8" y="8" width="580" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BKb-aM-rVv" firstAttribute="top" secondItem="TG1-NP-9cf" secondAttribute="topMargin" constant="-1" id="GKM-lr-Y0x"/>
-                                                <constraint firstItem="BKb-aM-rVv" firstAttribute="centerX" secondItem="TG1-NP-9cf" secondAttribute="centerX" id="KZY-CU-Rc4"/>
-                                                <constraint firstItem="BKb-aM-rVv" firstAttribute="leading" secondItem="TG1-NP-9cf" secondAttribute="leadingMargin" constant="4" id="YPC-N0-J7a"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="BKb-aM-rVv" secondAttribute="bottom" constant="-2" id="dPb-iH-Uks"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="BKb-aM-rVv" secondAttribute="trailing" constant="4" id="Blw-Bt-cVu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BKb-aM-rVv" secondAttribute="bottom" constant="-3" id="k6Y-mO-PFI"/>
+                                                <constraint firstItem="BKb-aM-rVv" firstAttribute="top" secondItem="TG1-NP-9cf" secondAttribute="topMargin" id="t2D-Vg-v2l"/>
+                                                <constraint firstItem="BKb-aM-rVv" firstAttribute="leading" secondItem="TG1-NP-9cf" secondAttribute="leadingMargin" id="vsi-qn-J7B"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="giO-EB-81v">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="giO-EB-81v" id="5ne-iW-Vor">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UvB-q3-oR6">
+                                                    <rect key="frame" x="8" y="8" width="584" height="28"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UvB-q3-oR6" firstAttribute="leading" secondItem="5ne-iW-Vor" secondAttribute="leadingMargin" id="18Q-YY-QnM"/>
+                                                <constraint firstItem="UvB-q3-oR6" firstAttribute="top" secondItem="5ne-iW-Vor" secondAttribute="topMargin" id="JNL-Kt-zEa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UvB-q3-oR6" secondAttribute="bottom" constant="-1" id="MA2-dB-fQX"/>
+                                                <constraint firstItem="UvB-q3-oR6" firstAttribute="trailing" secondItem="5ne-iW-Vor" secondAttribute="trailingMargin" id="Pli-Cu-Rcp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -174,10 +192,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Spotten" id="yFA-1w-aCi"/>
+                    <connections>
+                        <outlet property="spotImageView" destination="UvB-q3-oR6" id="Buz-Pb-Vkk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfo-tm-ne8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="-166"/>
+            <point key="canvasLocation" x="3001" y="-173"/>
         </scene>
         <!--Spotplaatsen-->
         <scene sceneID="7h3-oX-bWh">
@@ -196,7 +217,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hoA-Hm-p5M">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rvi-fi-U03">
@@ -241,7 +262,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9ho-0R-w8e">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="loginnaam@domein.nl" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5IV-VM-HOU">
@@ -267,19 +288,19 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g06-nB-gP1">
                                                     <rect key="frame" x="565" y="11" width="27" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jq6-FY-zIj">
                                                     <rect key="frame" x="547" y="11" width="10" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meldingsafstand" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMc-Ms-GEc">
                                                     <rect key="frame" x="15" y="11" width="127" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -305,7 +326,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Instellingen" id="X3H-WR-tMh">
                         <barButtonItem key="backBarButtonItem" title="Terug" id="IaB-1d-qIm">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -352,7 +373,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ksl-uk-fOK">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5A5-h4-SEL">
@@ -372,7 +393,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Mijn gespotte treinen" id="0MQ-Hk-PB7">
                         <barButtonItem key="backBarButtonItem" title="Terug" id="cBN-Mc-Qlm">
-                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -381,5 +402,5 @@
             <point key="canvasLocation" x="1577" y="583"/>
         </scene>
     </scenes>
-    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
