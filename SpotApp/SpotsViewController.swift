@@ -10,10 +10,19 @@ import UIKit
 
 class SpotsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource{
     
-    var spotList = [["Den Bosch MAC G1206","23-02-2015"],["Goederentrein Mook","20-03-2015"],["Spoorwerktuig Nijmegen","15-03-2015"]];
+    var spotList : [Spot] = [];
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        GetRequest.HTTPGetJSON("http://trainspot.herokuapp.com/api/spots", callback: {(data : Dictionary<String,AnyObject>, error: String?) -> Void in
+            if error != nil {
+                println(error)
+            }else{
+                for (keyname,spot) in data {
+                    println(keyname);
+                }
+            }
+        });
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SpotCell");
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,8 +52,8 @@ class SpotsViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("SpotCell") as UITableViewCell
-        cell.textLabel?.text=spotList[indexPath.row][0];
-        cell.detailTextLabel?.text = spotList[indexPath.row][1];
+        cell.textLabel?.text=spotList[indexPath.row].name;
+        cell.detailTextLabel?.text = spotList[indexPath.row].description;
         return cell
     }
 

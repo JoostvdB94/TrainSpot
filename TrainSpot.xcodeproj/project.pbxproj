@@ -15,6 +15,12 @@
 		C3795A241AA85C5400DA9073 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3795A221AA85C5400DA9073 /* LaunchScreen.xib */; };
 		C3795A301AA85C5400DA9073 /* SpotAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3795A2F1AA85C5400DA9073 /* SpotAppTests.swift */; };
 		C38621D91AB2F52B0003F7BB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38621D81AB2F52B0003F7BB /* MenuViewController.swift */; };
+		C3BBFE631AD54EB7009E6EA7 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBFE621AD54EB7009E6EA7 /* Spot.swift */; };
+		C3BBFE671AD54F1C009E6EA7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBFE661AD54F1C009E6EA7 /* Image.swift */; };
+		C3BBFE6A1AD5538D009E6EA7 /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBFE691AD5538D009E6EA7 /* GetRequest.swift */; };
+		C3BBFE6C1AD5563B009E6EA7 /* HttpsendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBFE6B1AD5563B009E6EA7 /* HttpsendRequest.swift */; };
+		C3BBFE6E1AD5566E009E6EA7 /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBFE6D1AD5566E009E6EA7 /* PostRequest.swift */; };
+		C3BBFE701AD55696009E6EA7 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBFE6F1AD55696009E6EA7 /* JSONParser.swift */; };
 		C3C371601AC56290004C28ED /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3715F1AC56290004C28ED /* SpotsViewController.swift */; };
 		C3D344CF1AB332CF0041AA2C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D344CE1AB332CF0041AA2C /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +48,12 @@
 		C3795A2E1AA85C5400DA9073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3795A2F1AA85C5400DA9073 /* SpotAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotAppTests.swift; sourceTree = "<group>"; };
 		C38621D81AB2F52B0003F7BB /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		C3BBFE621AD54EB7009E6EA7 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		C3BBFE661AD54F1C009E6EA7 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		C3BBFE691AD5538D009E6EA7 /* GetRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
+		C3BBFE6B1AD5563B009E6EA7 /* HttpsendRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpsendRequest.swift; sourceTree = "<group>"; };
+		C3BBFE6D1AD5566E009E6EA7 /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		C3BBFE6F1AD55696009E6EA7 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		C3C3715F1AC56290004C28ED /* SpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
 		C3D344CE1AB332CF0041AA2C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,16 +97,19 @@
 		C3795A161AA85C5300DA9073 /* TrainSpot */ = {
 			isa = PBXGroup;
 			children = (
+				C3BBFE681AD5536F009E6EA7 /* HTTPCommunication */,
+				C3BBFE611AD54EAA009E6EA7 /* Models */,
 				C3795A191AA85C5300DA9073 /* AppDelegate.swift */,
 				C3795A1B1AA85C5300DA9073 /* ViewController.swift */,
 				C30A71411AB30282003B384F /* NewSpotController.swift */,
 				C38621D81AB2F52B0003F7BB /* MenuViewController.swift */,
 				C3D344CE1AB332CF0041AA2C /* SettingsViewController.swift */,
+				C3C3715F1AC56290004C28ED /* SpotsViewController.swift */,
 				C3795A1D1AA85C5300DA9073 /* Main.storyboard */,
 				C3795A201AA85C5300DA9073 /* Images.xcassets */,
 				C3795A221AA85C5400DA9073 /* LaunchScreen.xib */,
 				C3795A171AA85C5300DA9073 /* Supporting Files */,
-				C3C3715F1AC56290004C28ED /* SpotsViewController.swift */,
+				C3BBFE6F1AD55696009E6EA7 /* JSONParser.swift */,
 			);
 			name = TrainSpot;
 			path = SpotApp;
@@ -124,6 +139,25 @@
 				C3795A2E1AA85C5400DA9073 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3BBFE611AD54EAA009E6EA7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBFE621AD54EB7009E6EA7 /* Spot.swift */,
+				C3BBFE661AD54F1C009E6EA7 /* Image.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C3BBFE681AD5536F009E6EA7 /* HTTPCommunication */ = {
+			isa = PBXGroup;
+			children = (
+				C3BBFE691AD5538D009E6EA7 /* GetRequest.swift */,
+				C3BBFE6B1AD5563B009E6EA7 /* HttpsendRequest.swift */,
+				C3BBFE6D1AD5566E009E6EA7 /* PostRequest.swift */,
+			);
+			name = HTTPCommunication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,10 +261,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C371601AC56290004C28ED /* SpotsViewController.swift in Sources */,
+				C3BBFE6E1AD5566E009E6EA7 /* PostRequest.swift in Sources */,
+				C3BBFE701AD55696009E6EA7 /* JSONParser.swift in Sources */,
+				C3BBFE671AD54F1C009E6EA7 /* Image.swift in Sources */,
 				C3795A1C1AA85C5300DA9073 /* ViewController.swift in Sources */,
 				C38621D91AB2F52B0003F7BB /* MenuViewController.swift in Sources */,
 				C30A71421AB30282003B384F /* NewSpotController.swift in Sources */,
+				C3BBFE6C1AD5563B009E6EA7 /* HttpsendRequest.swift in Sources */,
+				C3BBFE6A1AD5538D009E6EA7 /* GetRequest.swift in Sources */,
 				C3D344CF1AB332CF0041AA2C /* SettingsViewController.swift in Sources */,
+				C3BBFE631AD54EB7009E6EA7 /* Spot.swift in Sources */,
 				C3795A1A1AA85C5300DA9073 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
