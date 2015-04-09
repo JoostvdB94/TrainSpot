@@ -10,13 +10,22 @@ import Foundation
 struct PostRequest{
     static func HTTPPostJSON(url: String,
         jsonObj: AnyObject,
-        callback: (String, String?) -> Void) {
+        callback: (AnyObject, String?) -> Void) {
             var request = NSMutableURLRequest(URL: NSURL(string: url)!)
             request.HTTPMethod = "POST";
             request.addValue("application/json", forHTTPHeaderField: "Content-Type");
             let jsonString = JSONParser.JSONStringify(jsonObj)
             let data: NSData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)!
             request.HTTPBody = data
-            HTTPsendRequest(request, callback)
+            HTTPsendRequest(request) {
+                (data: String, error: String?) -> Void in
+                if (error != nil) {
+                    callback([["":""]], error)
+                } else {
+                    print(data);
+                    var jsonObj = JSONParser.JSONParseDictionary(data)
+                    callback(jsonObj,nil)
+                }
+            }
     }
 }

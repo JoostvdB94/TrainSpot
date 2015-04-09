@@ -9,29 +9,29 @@
 import UIKit
 
 class SpotsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    @IBOutlet var spotsView: UITableView!
-    var spotList : [Spot] = [];
+    var spotList = [Spot]();
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GetRequest.HTTPGetJSON("http://trainspot.herokuapp.com/api/spots", callback: {(data : [[String:AnyObject]], error: String?) -> Void in
-            if error != nil {
-                println(error)
-            }else{
-                for (spotData) in data {
-                    let imageArray = spotData["image"] as [NSString:NSString]
-                    let tmpImage = Image(newData: imageArray["data"]!, newFileExtension: imageArray["extension"]!)
-                    var tmpSpot = Spot(newName: spotData["name"] as NSString, newDescription: spotData["description"] as NSString, newLatitude: spotData["latitude"] as Double, newLongitude: spotData["longitude"] as Double, newImage: tmpImage)
-                    self.spotList.append(tmpSpot);
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            GetRequest.HTTPGetJSON("http://trainspot.herokuapp.com/api/spots", callback: {(data : [[String:AnyObject]], error: String?) -> Void in
+                
+                if error != nil {
+                    println(error)
+                }else{
+                    for (spotData) in data {
+                        let imageArray = spotData["image"] as! [NSString:NSString]
+                        let tmpImage = Image(newData: imageArray["data"]!, newFileExtension: imageArray["extension"]!)
+                        var tmpSpot = Spot(newName: spotData["name"] as! NSString, newDescription: spotData["description"] as! NSString, newLatitude: spotData["latitude"] as! Double, newLongitude: spotData["longitude"] as! Double, newImage: tmpImage)
+                        self.spotList.append(tmpSpot);
+                    }
                 }
                 dispatch_async(dispatch_get_main_queue(),{
-                    [self.tableView.reloadData];
+                    self.tableView!.reloadData()
                 });
-            }
-            println(self.spotList)
-            
-        });
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            });
+        
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SpotCell");
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,10 +60,10 @@ class SpotsViewController: UITableViewController, UITableViewDelegate, UITableVi
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("SpotCell") as UITableViewCell
-        println(spotList[indexPath.row].name)
-        cell.textLabel?.text=spotList[indexPath.row].name;
-        cell.detailTextLabel?.text = spotList[indexPath.row].description;
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("SpotCell") as! UITableViewCell
+        cell.textLabel?.text=spotList[indexPath.row].name as String;
+        cell.detailTextLabel?.text = spotList[indexPath.row].description as String;
+        cell.updateConstraintsIfNeeded();
         return cell
     }
 

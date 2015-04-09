@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C30A71421AB30282003B384F /* NewSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A71411AB30282003B384F /* NewSpotController.swift */; };
+		C36BCCEF1AD6B79200FDC7CA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BCCEE1AD6B79200FDC7CA /* LoginController.swift */; };
+		C36BCCF11AD6BAA900FDC7CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BCCF01AD6BAA900FDC7CA /* User.swift */; };
 		C3795A1A1AA85C5300DA9073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3795A191AA85C5300DA9073 /* AppDelegate.swift */; };
 		C3795A1C1AA85C5300DA9073 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3795A1B1AA85C5300DA9073 /* ViewController.swift */; };
 		C3795A1F1AA85C5300DA9073 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3795A1D1AA85C5300DA9073 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		C30A71411AB30282003B384F /* NewSpotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSpotController.swift; sourceTree = "<group>"; };
+		C36BCCEE1AD6B79200FDC7CA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C36BCCF01AD6BAA900FDC7CA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3795A141AA85C5300DA9073 /* TrainSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3795A181AA85C5300DA9073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3795A191AA85C5300DA9073 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				C3795A221AA85C5400DA9073 /* LaunchScreen.xib */,
 				C3795A171AA85C5300DA9073 /* Supporting Files */,
 				C3BBFE6F1AD55696009E6EA7 /* JSONParser.swift */,
+				C36BCCEE1AD6B79200FDC7CA /* LoginController.swift */,
 			);
 			name = TrainSpot;
 			path = SpotApp;
@@ -146,6 +151,7 @@
 			children = (
 				C3BBFE621AD54EB7009E6EA7 /* Spot.swift */,
 				C3BBFE661AD54F1C009E6EA7 /* Image.swift */,
+				C36BCCF01AD6BAA900FDC7CA /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -263,8 +269,10 @@
 				C3C371601AC56290004C28ED /* SpotsViewController.swift in Sources */,
 				C3BBFE6E1AD5566E009E6EA7 /* PostRequest.swift in Sources */,
 				C3BBFE701AD55696009E6EA7 /* JSONParser.swift in Sources */,
+				C36BCCEF1AD6B79200FDC7CA /* LoginController.swift in Sources */,
 				C3BBFE671AD54F1C009E6EA7 /* Image.swift in Sources */,
 				C3795A1C1AA85C5300DA9073 /* ViewController.swift in Sources */,
+				C36BCCF11AD6BAA900FDC7CA /* User.swift in Sources */,
 				C38621D91AB2F52B0003F7BB /* MenuViewController.swift in Sources */,
 				C30A71421AB30282003B384F /* NewSpotController.swift in Sources */,
 				C3BBFE6C1AD5563B009E6EA7 /* HttpsendRequest.swift in Sources */,

@@ -28,18 +28,24 @@ struct JSONParser{
     }
     
     static func JSONStringify(value: AnyObject, prettyPrinted: Bool = false) -> String {
+        var e:NSError?
         var options = prettyPrinted ? NSJSONWritingOptions.PrettyPrinted : nil
         if NSJSONSerialization.isValidJSONObject(value) {
-            if let data = NSJSONSerialization.dataWithJSONObject(value, options: options, error: nil) {
+            if let data = NSJSONSerialization.dataWithJSONObject(value, options: options, error: &e) {
                 if let string = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                    return string
+                    return string as String
+                }else{
+                    println("Iets anders ging fout met het converteren van JSON naar String. Is de string UTF8?")
                 }
+            }else{
+                println(e)
             }
+        }else{
+            println("No valid JSON")
         }
         return ""
     }
-    
-    
+    §
     static func JSONParseArray(jsonString: String) -> [AnyObject] {
         if let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding) {
             if let array = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: nil)  as? [AnyObject] {
