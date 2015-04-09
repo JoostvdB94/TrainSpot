@@ -13,15 +13,15 @@ struct GetRequest {
         HTTPsendRequest(request, callback)
     }
     
-    static func HTTPGetJSON(url: String, callback: (data: Dictionary<String, AnyObject>, error: String?) -> Void) {
+    static func HTTPGetJSON(url: String, callback: (data: [[String:AnyObject]], error: String?) -> Void) {
         var request = NSMutableURLRequest(URL: NSURL(string: url)!)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         HTTPsendRequest(request) {
             (data: String, error: String?) -> Void in
             if (error != nil) {
-                callback(data: Dictionary<String, AnyObject>(), error: error)
+                callback(data: [["":""]], error: error)
             } else {
-                var jsonObj = JSONParser.JSONParseDict(data)
+                var jsonObj = JSONParser.JSONParseDictionary(data)
                 callback(data: jsonObj, error: nil)
             }
         }

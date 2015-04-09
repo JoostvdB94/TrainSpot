@@ -8,19 +8,23 @@
 
 import Foundation
 struct JSONParser{
-    static func JSONParseDict(jsonString:String) -> Dictionary<String, AnyObject> {
-        var e: NSError?
-        var data: NSData = jsonString.dataUsingEncoding(
-            NSUTF8StringEncoding)!
-        var jsonObj = NSJSONSerialization.JSONObjectWithData(
-            data,
-            options: NSJSONReadingOptions(0),
-            error: &e) as Dictionary<String, AnyObject>
-        if (e != nil) {
-            return Dictionary<String, AnyObject>()
-        } else {
-            return jsonObj
+    
+    static func JSONParseDictionary(jsonString: String) -> [[String: AnyObject]] {
+        var error:NSError? = nil
+        if let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding){
+            if let jsonObject: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: nil, error:&error) {
+                if let dict = jsonObject as? [[String:AnyObject]] {
+                    return dict;
+                } else {
+                    println("Not convertable to dictionary")
+                }
+            } else {
+                println("Could not parse JSON: \(error!)")
+            }
+        }else{
+            println("JSON String is not convertable to NSData")
         }
+        return [[String:AnyObject]]()
     }
     
     static func JSONStringify(value: AnyObject, prettyPrinted: Bool = false) -> String {

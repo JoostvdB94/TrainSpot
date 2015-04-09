@@ -10,18 +10,27 @@ import UIKit
 
 class SpotsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet var spotsView: UITableView!
     var spotList : [Spot] = [];
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GetRequest.HTTPGetJSON("http://trainspot.herokuapp.com/api/spots", callback: {(data : Dictionary<String,AnyObject>, error: String?) -> Void in
+        GetRequest.HTTPGetJSON("http://trainspot.herokuapp.com/api/spots", callback: {(data : [[String:AnyObject]], error: String?) -> Void in
             if error != nil {
                 println(error)
             }else{
-                for (keyname,spot) in data {
-                    println(keyname);
+                for (spotData) in data {
+                    let imageArray = spotData["image"] as [NSString:NSString]
+                    let tmpImage = Image(newData: imageArray["data"]!, newFileExtension: imageArray["extension"]!)
+                    var tmpSpot = Spot(newName: spotData["name"] as NSString, newDescription: spotData["description"] as NSString, newLatitude: spotData["latitude"] as Double, newLongitude: spotData["longitude"] as Double, newImage: tmpImage)
+                    self.spotList.append(tmpSpot);
                 }
+                dispatch_async(dispatch_get_main_queue(),{
+                    [self.tableView.reloadData];
+                });
             }
+            println(self.spotList)
+            
         });
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SpotCell");
         // Uncomment the following line to preserve selection between presentations
@@ -52,6 +61,7 @@ class SpotsViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("SpotCell") as UITableViewCell
+        println(spotList[indexPath.row].name)
         cell.textLabel?.text=spotList[indexPath.row].name;
         cell.detailTextLabel?.text = spotList[indexPath.row].description;
         return cell
@@ -116,5 +126,4 @@ class SpotsViewController: UITableViewController, UITableViewDelegate, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
-
 }
