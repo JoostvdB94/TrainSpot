@@ -30,19 +30,19 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>47A63E07BF2C4AE0426F985EBA351C687092A209</key>
-		<string>../../RestKit/Vendor/TransitionKit/</string>
+		<string>../../RestKit/Vendor/TransitionKit</string>
 		<key>822670D72DA6CB3E094E900F0D31C5A6027736AD</key>
-		<string>../../RestKit/Vendor/ISO8601DateFormatterValueTransformer/</string>
+		<string>../../RestKit/Vendor/ISO8601DateFormatterValueTransformer</string>
 		<key>B4A2CA0E82E9AE44702AB02729DCFB235C2643C9</key>
-		<string>../../RestKit/Vendor/RKValueTransformers/</string>
+		<string>../../RestKit/Vendor/RKValueTransformers</string>
 		<key>BA26461E5AE9DDDD37DC1C2755F90EC3163FBFE1</key>
 		<string>../..</string>
 		<key>C80A0DCE7BA5516950B5677592E44706A6FDF392</key>
-		<string>../../RestKit/Vendor/SOCKit/</string>
+		<string>../../RestKit/Vendor/SOCKit</string>
 		<key>D78740BB5B159EA13C82AB5AF1D92A0F3C627237</key>
-		<string>../../RestKit/</string>
+		<string>../../RestKit</string>
 		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
-		<string>../../RestKit/Vendor/AFNetworking/</string>
+		<string>../../RestKit/Vendor/AFNetworking</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/JoostvdB94/TrainSpot.git</string>

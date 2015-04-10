@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Image{
+class Image : Serializable{
     var data : NSString = "";
     var fileExtension : NSString = "";
     

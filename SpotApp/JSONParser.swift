@@ -54,4 +54,17 @@ struct JSONParser{
         }
         return [AnyObject]()
     }
+    
+    
+    static func JSONParseObject(jsonString: String) -> AnyObject {
+        var err:NSError?
+        if let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding) {
+            if let array:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: &err){
+                return array
+            }else{
+                println("Problem parsing jsonObject \(err)");
+            }
+        }
+        return [AnyObject]()
+    }
 }

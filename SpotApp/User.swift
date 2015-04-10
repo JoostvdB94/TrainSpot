@@ -7,8 +7,8 @@
 //
 
 import Foundation
-class User {
-    var id :String = ""
+class User :Serializable{
+    var _id :String = ""
     var username :String
     var password :String
     init(username:String,password:String){

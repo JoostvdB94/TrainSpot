@@ -62,7 +62,7 @@ class SpotsViewController: UITableViewController, UITableViewDelegate, UITableVi
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("SpotCell") as! UITableViewCell
         cell.textLabel?.text=spotList[indexPath.row].name as String;
-        cell.detailTextLabel?.text = spotList[indexPath.row].description as String;
+        cell.detailTextLabel?.text = spotList[indexPath.row]._description as String;
         cell.updateConstraintsIfNeeded();
         return cell
     }

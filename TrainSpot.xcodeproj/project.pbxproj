@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C30A71421AB30282003B384F /* NewSpotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30A71411AB30282003B384F /* NewSpotController.swift */; };
+		C34577051AD7BF13008A5E12 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34577041AD7BF13008A5E12 /* Serializable.swift */; };
 		C36BCCEF1AD6B79200FDC7CA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BCCEE1AD6B79200FDC7CA /* LoginController.swift */; };
 		C36BCCF11AD6BAA900FDC7CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36BCCF01AD6BAA900FDC7CA /* User.swift */; };
 		C3795A1A1AA85C5300DA9073 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3795A191AA85C5300DA9073 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		C30A71411AB30282003B384F /* NewSpotController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSpotController.swift; sourceTree = "<group>"; };
+		C34577041AD7BF13008A5E12 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		C36BCCEE1AD6B79200FDC7CA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C36BCCF01AD6BAA900FDC7CA /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C3795A141AA85C5300DA9073 /* TrainSpot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainSpot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C34577031AD7BEED008A5E12 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				C34577041AD7BF13008A5E12 /* Serializable.swift */,
+			);
+			name = Wrappers;
+			sourceTree = "<group>";
+		};
 		C3795A0B1AA85C5300DA9073 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		C3795A161AA85C5300DA9073 /* TrainSpot */ = {
 			isa = PBXGroup;
 			children = (
+				C34577031AD7BEED008A5E12 /* Wrappers */,
 				C3BBFE681AD5536F009E6EA7 /* HTTPCommunication */,
 				C3BBFE611AD54EAA009E6EA7 /* Models */,
 				C3795A191AA85C5300DA9073 /* AppDelegate.swift */,
@@ -272,6 +283,7 @@
 				C36BCCEF1AD6B79200FDC7CA /* LoginController.swift in Sources */,
 				C3BBFE671AD54F1C009E6EA7 /* Image.swift in Sources */,
 				C3795A1C1AA85C5300DA9073 /* ViewController.swift in Sources */,
+				C34577051AD7BF13008A5E12 /* Serializable.swift in Sources */,
 				C36BCCF11AD6BAA900FDC7CA /* User.swift in Sources */,
 				C38621D91AB2F52B0003F7BB /* MenuViewController.swift in Sources */,
 				C30A71421AB30282003B384F /* NewSpotController.swift in Sources */,

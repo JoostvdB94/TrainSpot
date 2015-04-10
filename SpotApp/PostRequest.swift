@@ -22,8 +22,7 @@ struct PostRequest{
                 if (error != nil) {
                     callback([["":""]], error)
                 } else {
-                    print(data);
-                    var jsonObj = JSONParser.JSONParseDictionary(data)
+                    var jsonObj:AnyObject = JSONParser.JSONParseObject(data)
                     callback(jsonObj,nil)
                 }
             }

@@ -18,8 +18,7 @@ func HTTPsendRequest(request: NSMutableURLRequest,
                     callback("", error.localizedDescription)
                 } else {
                     callback(
-                        NSString(data: data, encoding: NSUTF8StringEncoding)! as String,
-                        nil
+                        NSString(data: data, encoding: NSUTF8StringEncoding)! as String, nil
                     )
                 }
         })
