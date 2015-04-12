@@ -27,10 +27,11 @@ class LocationViewController: UITableViewController, UITableViewDelegate, UITabl
             }else{
                 for (locationData) in data {
                     var tmpLocation = Location(newId: locationData["_id"] as! String, newName: locationData["name"] as! String, newType: locationData["type"] as! String,newLatitude: locationData["latitude"] as! Double, newLongitude: locationData["longitude"] as! Double)
-                    
-                    self.locations.append(tmpLocation)
+                    tmpLocation.distance = geoLocation.distanceFromLocation(tmpLocation.getLocation()) / 1000
+                                        self.locations.append(tmpLocation)
                 }
             }
+            self.locations.sort({$0.distance < $1.distance})
             dispatch_async(dispatch_get_main_queue(),{
                 self.tableView!.reloadData()
             });
@@ -66,7 +67,7 @@ class LocationViewController: UITableViewController, UITableViewDelegate, UITabl
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("LocationCell") as! UITableViewCell
         cell.textLabel?.text=self.locations[indexPath.row].name as String
-        cell.detailTextLabel?.text="\(self.locations[indexPath.row].distance) KM"
+        cell.detailTextLabel?.text=String(format: "%.1f KM", self.locations[indexPath.row].distance)
         cell.updateConstraintsIfNeeded();
         return cell
     }
@@ -90,10 +91,6 @@ class LocationViewController: UITableViewController, UITableViewDelegate, UITabl
             self.manager = nil
         }
         return returnLocation
-    }
-    
-    func calculateDistanceInKM(){
-        
     }
     
     /*
