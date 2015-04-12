@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K9x-Ds-1G1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K9x-Ds-1G1">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
@@ -277,13 +277,13 @@
         <!--Spotplaatsen-->
         <scene sceneID="7h3-oX-bWh">
             <objects>
-                <tableViewController id="lYz-oj-z3B" sceneMemberID="viewController">
+                <tableViewController id="lYz-oj-z3B" customClass="LocationViewController" customModule="TrainSpot" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QKV-hh-NNC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SpotplaceWithDistance" textLabel="hoA-Hm-p5M" detailTextLabel="Rvi-fi-U03" style="IBUITableViewCellStyleValue1" id="FPp-Fu-FUY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" textLabel="hoA-Hm-p5M" detailTextLabel="Rvi-fi-U03" style="IBUITableViewCellStyleValue1" id="FPp-Fu-FUY">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FPp-Fu-FUY" id="JZ8-g1-iyQ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -305,8 +305,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="lYz-oj-z3B" id="Uy6-R7-D90"/>
-                            <outlet property="delegate" destination="lYz-oj-z3B" id="hrs-TN-Gse"/>
+                            <outlet property="dataSource" destination="lYz-oj-z3B" id="YoY-wE-z2D"/>
+                            <outlet property="delegate" destination="lYz-oj-z3B" id="dfN-6U-tZu"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Spotplaatsen" id="QZc-91-Tvf">

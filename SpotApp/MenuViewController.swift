@@ -25,6 +25,8 @@ class MenuViewController: UITableViewController,UINavigationControllerDelegate {
         if var vc = viewController as? LoginController{
             GetRequest.HTTPGet("http://trainspot.herokuapp.com/logout", callback: { (data: String, error: String?) -> Void in
                 defaults.removeObjectForKey("userKey");
+                defaults.removeObjectForKey("username");
+                defaults.removeObjectForKey("password");
                 let alertController = UIAlertController(title: "Uitgelogd", message:"U bent succesvol uitgelogd", preferredStyle: UIAlertControllerStyle.Alert)
                 alertController.addAction(UIAlertAction(title: "Oke", style: .Default, handler: { (action: UIAlertAction!) in
                     
