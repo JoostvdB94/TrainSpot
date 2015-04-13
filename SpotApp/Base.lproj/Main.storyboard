@@ -257,13 +257,13 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zTX-4j-g4F">
                                 <rect key="frame" x="16" y="193" width="568" height="399"/>
                             </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKO-47-UBR">
+                                <rect key="frame" x="16" y="96" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PMm-PT-4Cm">
                                 <rect key="frame" x="16" y="155" width="274" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-tE-I17">
-                                <rect key="frame" x="310" y="155" width="274" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
@@ -285,10 +285,10 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eKO-47-UBR">
-                                <rect key="frame" x="16" y="96" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-tE-I17">
+                                <rect key="frame" x="310" y="155" width="274" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -311,6 +311,7 @@
                             <constraint firstItem="zTX-4j-g4F" firstAttribute="trailing" secondItem="gBd-tE-I17" secondAttribute="trailing" id="hUU-vS-fia"/>
                             <constraint firstItem="zTX-4j-g4F" firstAttribute="trailing" secondItem="Cja-lc-biJ" secondAttribute="trailingMargin" id="vVk-sq-kKp"/>
                             <constraint firstItem="u8t-Ug-oGs" firstAttribute="centerX" secondItem="PMm-PT-4Cm" secondAttribute="centerX" id="wZt-pG-D62"/>
+                            <constraint firstItem="PMm-PT-4Cm" firstAttribute="width" secondItem="gBd-tE-I17" secondAttribute="width" id="zJP-DG-QV9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="86K-1e-Hvo" secondAttribute="trailing" constant="98" id="zXe-jN-seP"/>
                         </constraints>
                     </view>
