@@ -18,11 +18,13 @@ class Serializable : NSObject{
         for var i = 0; i < Int(propertiesCount); i++ {
             var property = propertiesInAClass[i]
             var propName = NSString(CString: property_getName(property), encoding: NSUTF8StringEncoding)!
-//            propName = propName as! String
-//            propName = propName.stringByReplacingCharactersInRange(NSRange(location: 0, length: 1),withString: "_")
+            
+            propName = propName as! String
             var propType = property_getAttributes(property)
             var propValue : AnyObject! = self.valueForKey(propName as! String);
-            
+            if propName == "_description" {
+                propName = "description"
+            }
             if propValue is Serializable {
                 propertiesDictionary.setValue((propValue as! Serializable).toDictionary(), forKey: propName  as! String)
             } else if propValue is Array<Serializable> {

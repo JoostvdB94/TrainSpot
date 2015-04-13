@@ -15,7 +15,7 @@ func HTTPsendRequest(request: NSMutableURLRequest,
             completionHandler: {
                 data, response, error in
                 if error != nil {
-                    callback("", error.localizedDescription)
+                    callback("", "Error! \(error.localizedDescription) Response: \(response)")
                 } else {
                     callback(
                         NSString(data: data, encoding: NSUTF8StringEncoding)! as String, nil

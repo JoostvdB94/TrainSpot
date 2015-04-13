@@ -7,16 +7,56 @@
 //
 
 import UIKit
+import CoreLocation
 
 class NewSpotController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     //3107
-    
+    var imagePicker : UIImagePickerController!;
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var descriptionField: UITextField!
+    var geoLocationManager = GeoLocationManager()
+    
+    @IBAction func tapGesture(sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    @IBAction func pictureButtonClick(sender: UIButton) {
+        self.takeAPicture()
+    }
+    
+    @IBAction func saveButtonClick(sender: AnyObject) {
+        let spotName = nameField.text
+        let spotDescription = descriptionField.text
+        let imageString = UIImageJPEGRepresentation(imageView.image, 0.2)
+        let newSpotUrl = "http://trainspot.herokuapp.com/api/spots"
+        
+        geoLocationManager.fetchWithCompletion { (location, error) -> () in
+            if var geoLocation = location{
+                let newSpot = Spot(newName: spotName, newDescription: spotDescription, newLatitude: (geoLocation.coordinate.latitude as CLLocationDegrees?)!, newLongitude: (geoLocation.coordinate.longitude as CLLocationDegrees?)!, newImage: Image(newData: imageString.base64EncodedStringWithOptions(nil), newFileExtension: "image/jpeg"))
+                print(newSpot.toDictionary())
+                PostRequest.HTTPPostJSON(newSpotUrl, jsonObj: newSpot.toDictionary(), callback: { (data,error) -> Void in
+                    if(error != nil){
+                        println(error)
+                        println("Errored data: \(data)")
+                    }else{
+                        println("Verstuurd")
+                    }
+                })
+            }
+        }
+        
+        
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+    }
     
     func takeAPicture(){
         if(UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)){
-            let imagePicker : UIImagePickerController = UIImagePickerController();
+            imagePicker = UIImagePickerController();
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
             imagePicker.takePicture();
@@ -36,6 +76,12 @@ class NewSpotController: UIViewController,UINavigationControllerDelegate,UIImage
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: { () -> Void in
+            //niks
+        })
+        imageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

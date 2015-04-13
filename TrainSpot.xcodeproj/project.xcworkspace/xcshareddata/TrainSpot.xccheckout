@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F2055ABB-474D-419D-BED3-467539E7F439</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>TrainSpot</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BA26461E5AE9DDDD37DC1C2755F90EC3163FBFE1</key>
 		<string>https://github.com/JoostvdB94/TrainSpot.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TrainSpot.xcodeproj/project.xcworkspace</string>
+	<string>TrainSpot.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BA26461E5AE9DDDD37DC1C2755F90EC3163FBFE1</key>

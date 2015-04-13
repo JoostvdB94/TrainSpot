@@ -262,9 +262,13 @@
                                 <state key="normal" title="Maak een foto">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pictureButtonClick:" destination="opv-Rm-qiM" eventType="touchUpInside" id="yqX-Ln-n2o"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ajZ-2x-Ty5" firstAttribute="leading" secondItem="ppw-fa-a4e" secondAttribute="leading" id="9mZ-8M-6j5"/>
                             <constraint firstItem="XTH-M8-XY0" firstAttribute="trailing" secondItem="rS5-zP-n7H" secondAttribute="trailingMargin" id="CdR-i3-eks"/>
@@ -284,10 +288,29 @@
                             <constraint firstItem="hwC-wc-UIM" firstAttribute="top" secondItem="5ND-Ib-YT6" secondAttribute="bottom" constant="8" symbolic="YES" id="twf-5x-PDS"/>
                             <constraint firstItem="ppw-fa-a4e" firstAttribute="top" secondItem="hwC-wc-UIM" secondAttribute="bottom" constant="8" symbolic="YES" id="wlG-Cc-gOZ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="AIW-Dh-v6z" appends="YES" id="fF1-h7-M9Q"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Spotten" id="teq-Aj-CTr"/>
+                    <navigationItem key="navigationItem" title="Spotten" id="teq-Aj-CTr">
+                        <barButtonItem key="rightBarButtonItem" title=" Versturen" id="l4N-pn-JsI">
+                            <connections>
+                                <action selector="saveButtonClick:" destination="opv-Rm-qiM" id="EtS-tA-BpT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionField" destination="hwC-wc-UIM" id="bGo-Pu-6Mj"/>
+                        <outlet property="imageView" destination="ppw-fa-a4e" id="Kvr-PC-HMf"/>
+                        <outlet property="nameField" destination="XTH-M8-XY0" id="edg-UV-ToC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Td-mq-RYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AIW-Dh-v6z">
+                    <connections>
+                        <action selector="tapGesture:" destination="opv-Rm-qiM" id="JhR-Eb-zWN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3050" y="-199"/>
         </scene>
