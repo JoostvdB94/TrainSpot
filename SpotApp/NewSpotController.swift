@@ -29,18 +29,18 @@ class NewSpotController: UIViewController,UINavigationControllerDelegate,UIImage
         let spotName = nameField.text
         let spotDescription = descriptionField.text
         let imageString = UIImageJPEGRepresentation(imageView.image, 0.2)
-        let newSpotUrl = "http://trainspot.herokuapp.com/api/spots"
+        let newSpotUrl = "http://compuplex.nl:10033/api/spots"
         
         geoLocationManager.fetchWithCompletion { (location, error) -> () in
             if var geoLocation = location{
                 let newSpot = Spot(newName: spotName, newDescription: spotDescription, newLatitude: (geoLocation.coordinate.latitude as CLLocationDegrees?)!, newLongitude: (geoLocation.coordinate.longitude as CLLocationDegrees?)!, newImage: Image(newData: imageString.base64EncodedStringWithOptions(nil), newFileExtension: "image/jpeg"))
-                print(newSpot.toDictionary())
                 PostRequest.HTTPPostJSON(newSpotUrl, jsonObj: newSpot.toDictionary(), callback: { (data,error) -> Void in
                     if(error != nil){
                         println(error)
                         println("Errored data: \(data)")
                     }else{
                         println("Verstuurd")
+                        println("Ontvangen \(data)")
                     }
                 })
             }

@@ -28,7 +28,7 @@ class LoginController: UIViewController {
     }
     
     func loginWithUser(user:User){
-        let loginURL = "http://trainspot.herokuapp.com/login"
+        let loginURL = "http://compuplex.nl:10033/login"
         
         var alert: UIAlertView = UIAlertView(title: "Login", message: "Bezig met inloggen...", delegate: nil, cancelButtonTitle: nil);
         
@@ -57,7 +57,6 @@ class LoginController: UIViewController {
                     dispatch_async(dispatch_get_main_queue(),{
                         self.performSegueWithIdentifier("loginSegue", sender: UIButton())
                     });
-                    println(defaults.stringForKey("userKey"))
                 }else{
                     let alertController = UIAlertController(title: "Oh you hacker..", message:"Ongeldige inloggegevens", preferredStyle: UIAlertControllerStyle.Alert)
                     alertController.addAction(UIAlertAction(title: "Sorry!", style: .Default, handler: { (action: UIAlertAction!) in

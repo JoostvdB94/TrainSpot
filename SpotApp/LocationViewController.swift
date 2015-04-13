@@ -56,7 +56,7 @@ class LocationViewController: UITableViewController, UITableViewDelegate, UITabl
     
    
     func addLocationsToList(){
-        let locationsUrl = "http://trainspot.herokuapp.com/api/locations"
+        let locationsUrl = "http://compuplex.nl:10033/api/locations"
         
         //
         // request the current location

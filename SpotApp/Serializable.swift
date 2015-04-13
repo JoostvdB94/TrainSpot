@@ -25,6 +25,9 @@ class Serializable : NSObject{
             if propName == "_description" {
                 propName = "description"
             }
+            if propName == "_extension" {
+                propName = "extension"
+            }
             if propValue is Serializable {
                 propertiesDictionary.setValue((propValue as! Serializable).toDictionary(), forKey: propName  as! String)
             } else if propValue is Array<Serializable> {
@@ -35,10 +38,8 @@ class Serializable : NSObject{
                 propertiesDictionary.setValue(subArray, forKey: propName  as! String)
             } else if propValue is NSData {
                 propertiesDictionary.setValue((propValue as! NSData).base64EncodedStringWithOptions(nil), forKey: propName as! String)
-            } else if propValue is Bool {
-                propertiesDictionary.setValue((propValue as! Bool).boolValue, forKey: propName as! String)
             } else {
-                propertiesDictionary.setValue(propValue, forKey: propName as! String)
+                propertiesDictionary.setValue("\(propValue)", forKey: propName as! String)
             }
         }
         

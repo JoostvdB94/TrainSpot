@@ -10,10 +10,10 @@ import Foundation
 
 class Image : Serializable{
     var data : NSString = "";
-    var fileExtension : NSString = "";
+    var _extension : NSString = "";
     
     init(newData:NSString,newFileExtension:NSString){
         self.data = newData;
-        self.fileExtension = newFileExtension;
+        self._extension = newFileExtension;
     }
 }

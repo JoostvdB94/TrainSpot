@@ -23,7 +23,7 @@ class MenuViewController: UITableViewController,UINavigationControllerDelegate {
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         let defaults = NSUserDefaults.standardUserDefaults()
         if var vc = viewController as? LoginController{
-            GetRequest.HTTPGet("http://trainspot.herokuapp.com/logout", callback: { (data: String, error: String?) -> Void in
+            GetRequest.HTTPGet("http://compuplex.nl:10033/logout", callback: { (data: String, error: String?) -> Void in
                 defaults.removeObjectForKey("userKey");
                 defaults.removeObjectForKey("username");
                 defaults.removeObjectForKey("password");

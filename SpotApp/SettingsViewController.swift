@@ -12,17 +12,24 @@ class SettingsViewController: UITableViewController {
 
     @IBOutlet weak var distanceValueLabel: UILabel!
     
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var distanceStepper: UIStepper!
     
     @IBAction func onValueChangedStepper(sender: UIStepper) {
         distanceValueLabel.text =  String(format:"%.0f",sender.value);
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setDouble(sender.value, forKey: "distanceSetting")
     }
     
     @IBAction func onTouchStepper(sender: UIStepper) {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        distanceValueLabel.text =  String(format:"%.0f",distanceStepper.value);
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let distanceSettingValue = defaults.doubleForKey("distanceSetting")
+        distanceValueLabel.text =  String(format:"%.0f",distanceSettingValue);3
+        distanceStepper.value = defaults.doubleForKey("distanceSetting")
+        usernameLabel.text = defaults.stringForKey("username")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

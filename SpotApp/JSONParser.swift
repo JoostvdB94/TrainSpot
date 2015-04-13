@@ -62,7 +62,7 @@ struct JSONParser{
             if let array:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0), error: &err){
                 return array
             }else{
-                println("Problem parsing jsonObject \(err)");
+                println("Problem parsing jsonObject \(err) \n Data: \(jsonString)");
             }
         }
         return [AnyObject]()

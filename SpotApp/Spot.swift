@@ -15,6 +15,7 @@ class Spot : Serializable {
     var longitude:CLLocationDegrees = 0;
     var creationDate : Int64
     var image:Image;
+    var distance:CLLocationDistance = 0
     
     init(newName:NSString,newDescription:NSString,newLatitude:CLLocationDegrees,newLongitude:CLLocationDegrees,newImage:Image){
         self.name = newName;

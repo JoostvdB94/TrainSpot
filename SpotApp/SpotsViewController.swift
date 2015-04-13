@@ -10,11 +10,11 @@ import UIKit
 
 class SpotsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource{
     var spotList = [Spot]();
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            GetRequest.HTTPGetJSON("http://trainspot.herokuapp.com/api/spots", callback: {(data : [[String:AnyObject]], error: String?) -> Void in
+            GetRequest.HTTPGetJSON("http://compuplex.nl:10033/api/spots", callback: {(data : [[String:AnyObject]], error: String?) -> Void in
                 
                 if error != nil {
                     println(error)
@@ -66,11 +66,6 @@ class SpotsViewController: UITableViewController, UITableViewDelegate, UITableVi
         cell.updateConstraintsIfNeeded();
         return cell
     }
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -126,4 +121,10 @@ class SpotsViewController: UITableViewController, UITableViewDelegate, UITableVi
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var viewController : SpotDetailViewController = segue.destinationViewController as! SpotDetailViewController
+        var path = self.tableView.indexPathForSelectedRow()
+        viewController.spot = spotList[path!.row]
+    }
 }
