@@ -16,27 +16,9 @@ class LocationViewController: UITableViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var geoLocation = self.getLocation()
-        
-        let locationsUrl = "http://trainspot.herokuapp.com/api/locations"
+       
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        GetRequest.HTTPGetJSON(locationsUrl, callback: { (data, error) -> Void in
-            if error != nil {
-                println(error)
-            }else{
-                for (locationData) in data {
-                    var tmpLocation = Location(newId: locationData["_id"] as! String, newName: locationData["name"] as! String, newType: locationData["type"] as! String,newLatitude: locationData["latitude"] as! Double, newLongitude: locationData["longitude"] as! Double)
-                    tmpLocation.distance = geoLocation.distanceFromLocation(tmpLocation.getLocation()) / 1000
-                                        self.locations.append(tmpLocation)
-                }
-            }
-            self.locations.sort({$0.distance < $1.distance})
-            dispatch_async(dispatch_get_main_queue(),{
-                self.tableView!.reloadData()
-            });
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        })
+        self.addLocationsToList()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -72,25 +54,42 @@ class LocationViewController: UITableViewController, UITableViewDelegate, UITabl
         return cell
     }
     
-    func getLocation() -> CLLocation {
+   
+    func addLocationsToList(){
+        let locationsUrl = "http://trainspot.herokuapp.com/api/locations"
+        
         //
         // request the current location
         //
-        var returnLocation : CLLocation = CLLocation()
         manager = GeoLocationManager()
         manager!.fetchWithCompletion {location, error in
             
             // fetch location or an error
-            if let loc = location {
-                returnLocation = loc
+            if let geoLocation = location {
+                GetRequest.HTTPGetJSON(locationsUrl, callback: { (data, error) -> Void in
+                    if error != nil {
+                        println(error)
+                    }else{
+                        for (locationData) in data {
+                            var tmpLocation = Location(newId: locationData["_id"] as! String, newName: locationData["name"] as! String, newType: locationData["type"] as! String,newLatitude: locationData["latitude"] as! Double, newLongitude: locationData["longitude"] as! Double)
+                            tmpLocation.distance = geoLocation.distanceFromLocation(tmpLocation.getLocation()) / 1000
+                            self.locations.append(tmpLocation)
+                        }
+                    }
+                    self.locations.sort({$0.distance < $1.distance})
+                    dispatch_async(dispatch_get_main_queue(),{
+                        self.tableView!.reloadData()
+                    });
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                })
             } else if let err = error {
-               println(err)
+                println(err)
             }
             
             // destroy the object immediately to save memory
             self.manager = nil
         }
-        return returnLocation
+
     }
     
     /*

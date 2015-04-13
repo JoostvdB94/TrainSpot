@@ -8,16 +8,19 @@
 
 import UIKit
 
-class NewSpotController: UITableViewController,UITableViewDelegate, UITableViewDataSource,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
+class NewSpotController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
-    @IBOutlet weak var spotImageView: UIImageView!
+    //3107
     
-    @IBAction func onTouchCameraButton(sender: UIButton) {
-        
+    @IBOutlet weak var imageView: UIImageView!
+    
+    func takeAPicture(){
         if(UIImagePickerController.isCameraDeviceAvailable(UIImagePickerControllerCameraDevice.Rear)){
             let imagePicker : UIImagePickerController = UIImagePickerController();
+            imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
             imagePicker.takePicture();
+            presentViewController(imagePicker, animated: true, completion: nil)
         }else{
             println("No camera found");
         }
@@ -25,7 +28,7 @@ class NewSpotController: UITableViewController,UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -49,7 +52,7 @@ class NewSpotController: UITableViewController,UITableViewDelegate, UITableViewD
         return cell
     }
     */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

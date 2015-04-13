@@ -4,7 +4,7 @@ import UIKit
 import CoreLocation
 
 //possible errors
-enum OneShotLocationManagerErrors: Int {
+enum GeoLocationManagerErrors: Int {
     case AuthorizationDenied
     case AuthorizationNotDetermined
     case InvalidLocation
@@ -40,7 +40,7 @@ class GeoLocationManager: NSObject, CLLocationManagerDelegate {
             self.locationManager!.startUpdatingLocation()
         case .Denied:
             _didComplete(nil, error: NSError(domain: self.classForCoder.description(),
-                code: OneShotLocationManagerErrors.AuthorizationDenied.rawValue,
+                code: GeoLocationManagerErrors.AuthorizationDenied.rawValue,
                 userInfo: nil))
         default:
             break
@@ -56,7 +56,7 @@ class GeoLocationManager: NSObject, CLLocationManagerDelegate {
             _didComplete(location, error: nil)
         } else {
             _didComplete(nil, error: NSError(domain: self.classForCoder.description(),
-                code: OneShotLocationManagerErrors.InvalidLocation.rawValue,
+                code: GeoLocationManagerErrors.InvalidLocation.rawValue,
                 userInfo: nil))
         }
     }
