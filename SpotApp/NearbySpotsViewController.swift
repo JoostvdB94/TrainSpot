@@ -14,9 +14,8 @@ class NearbySpotsViewController: UITableViewController, UITableViewDelegate, UIT
     var nearbySpots = [Spot]()
     var geoLocationManager: GeoLocationManager?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    required init!(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
         let defaults = NSUserDefaults.standardUserDefaults()
         var distanceValue = defaults.doubleForKey("distanceSetting")
         
@@ -46,6 +45,11 @@ class NearbySpotsViewController: UITableViewController, UITableViewDelegate, UIT
                 println(err)
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

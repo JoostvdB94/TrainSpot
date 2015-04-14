@@ -21,32 +21,37 @@ class NewSpotController: UIViewController,UINavigationControllerDelegate,UIImage
     @IBAction func tapGesture(sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
+    
     @IBAction func pictureButtonClick(sender: UIButton) {
         self.takeAPicture()
     }
     
     @IBAction func saveButtonClick(sender: AnyObject) {
-        let spotName = nameField.text
-        let spotDescription = descriptionField.text
-        let imageString = UIImageJPEGRepresentation(imageView.image, 0.2)
-        let newSpotUrl = "http://compuplex.nl:10033/api/spots"
-        
-        geoLocationManager.fetchWithCompletion { (location, error) -> () in
-            if var geoLocation = location{
-                let newSpot = Spot(newName: spotName, newDescription: spotDescription, newLatitude: (geoLocation.coordinate.latitude as CLLocationDegrees?)!, newLongitude: (geoLocation.coordinate.longitude as CLLocationDegrees?)!, newImage: Image(newData: imageString.base64EncodedStringWithOptions(nil), newFileExtension: "image/jpeg"))
-                PostRequest.HTTPPostJSON(newSpotUrl, jsonObj: newSpot.toDictionary(), callback: { (data,error) -> Void in
-                    if(error != nil){
-                        println(error)
-                        println("Errored data: \(data)")
-                    }else{
-                        println("Verstuurd")
-                        println("Ontvangen \(data)")
-                    }
-                })
+        if(imageView.image != nil && nameField.text != "" && descriptionField.text != ""){
+            let spotName = nameField.text
+            let spotDescription = descriptionField.text
+            let imageString = UIImageJPEGRepresentation(imageView.image, 0.2)
+            let newSpotUrl = "http://compuplex.nl:10033/api/spots"
+            geoLocationManager.fetchWithCompletion { (location, error) -> () in
+                if var geoLocation = location{
+                    let newSpot = Spot(newName: spotName, newDescription: spotDescription, newLatitude: (geoLocation.coordinate.latitude as CLLocationDegrees?)!, newLongitude: (geoLocation.coordinate.longitude as CLLocationDegrees?)!, newImage: Image(newData: imageString.base64EncodedStringWithOptions(nil), newFileExtension: "image/jpeg"))
+                    PostRequest.HTTPPostJSON(newSpotUrl, jsonObj: newSpot.toDictionary(), callback: { (data,error) -> Void in
+                        if(error != nil){
+                            println(error)
+                            println("Errored data: \(data)")
+                        }else{
+                            let alertController = UIAlertController(title: "Verstuurd", message:"Spot succesvol verstuurd", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "Oke", style: .Default, handler: { (action: UIAlertAction!) in
+                                self.navigationController?.popViewControllerAnimated(true)
+                            }))
+                            dispatch_async(dispatch_get_main_queue(),{
+                                self.presentViewController(alertController, animated: true, completion: nil)
+                            });
+                        }
+                    })
+                }
             }
         }
-        
-        
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -68,7 +73,7 @@ class NewSpotController: UIViewController,UINavigationControllerDelegate,UIImage
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFit
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

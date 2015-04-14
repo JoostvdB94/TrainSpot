@@ -29,6 +29,7 @@ class SpotDetailViewController: UIViewController {
         let decodedData = NSData(base64EncodedString: spot.image.data as String, options: NSDataBase64DecodingOptions(rawValue: 0))
         var decodedimage = UIImage(data: decodedData!)
         spotImageView.image = decodedimage
+        spotImageView.contentMode = UIViewContentMode.ScaleAspectFit
     }
 
     override func didReceiveMemoryWarning() {

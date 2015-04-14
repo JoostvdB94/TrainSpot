@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class LocationViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -54,6 +55,9 @@ class LocationViewController: UITableViewController, UITableViewDelegate, UITabl
         return cell
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.loadView()
+    }
    
     func addLocationsToList(){
         let locationsUrl = "http://compuplex.nl:10033/api/locations"
@@ -89,6 +93,25 @@ class LocationViewController: UITableViewController, UITableViewDelegate, UITabl
             // destroy the object immediately to save memory
             self.manager = nil
         }
+
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var clickedLocation = self.locations[indexPath.row]
+        var latitute:CLLocationDegrees =  clickedLocation.latitude
+        var longitute:CLLocationDegrees =  clickedLocation.longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        var coordinates = CLLocationCoordinate2DMake(latitute, longitute)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        var options = [
+            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
+        ]
+        var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        var mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "\(clickedLocation.name)"
+        mapItem.openInMapsWithLaunchOptions(options)
 
     }
     

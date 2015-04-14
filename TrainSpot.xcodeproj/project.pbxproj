@@ -26,6 +26,7 @@
 		C3BBFE701AD55696009E6EA7 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BBFE6F1AD55696009E6EA7 /* JSONParser.swift */; };
 		C3C371601AC56290004C28ED /* SpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3715F1AC56290004C28ED /* SpotsViewController.swift */; };
 		C3D344CF1AB332CF0041AA2C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D344CE1AB332CF0041AA2C /* SettingsViewController.swift */; };
+		C3F38C761ADD11A50096DAA2 /* NewLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F38C751ADD11A50096DAA2 /* NewLocationViewController.swift */; };
 		CE32862E1ADB0A810072790B /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32862D1ADB0A810072790B /* LocationViewController.swift */; };
 		CE3286301ADB0AE20072790B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32862F1ADB0AE20072790B /* Location.swift */; };
 		CED199841ADC5C3B00BF223E /* NearbySpotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED199831ADC5C3B00BF223E /* NearbySpotsViewController.swift */; };
@@ -67,6 +68,7 @@
 		C3BBFE6F1AD55696009E6EA7 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		C3C3715F1AC56290004C28ED /* SpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsViewController.swift; sourceTree = "<group>"; };
 		C3D344CE1AB332CF0041AA2C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C3F38C751ADD11A50096DAA2 /* NewLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLocationViewController.swift; sourceTree = "<group>"; };
 		CE32862D1ADB0A810072790B /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		CE32862F1ADB0AE20072790B /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CED199831ADC5C3B00BF223E /* NearbySpotsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbySpotsViewController.swift; sourceTree = "<group>"; };
@@ -126,7 +128,6 @@
 				C3BBFE611AD54EAA009E6EA7 /* Models */,
 				C3795A191AA85C5300DA9073 /* AppDelegate.swift */,
 				C3795A1B1AA85C5300DA9073 /* ViewController.swift */,
-				C30A71411AB30282003B384F /* NewSpotController.swift */,
 				C38621D81AB2F52B0003F7BB /* MenuViewController.swift */,
 				C3D344CE1AB332CF0041AA2C /* SettingsViewController.swift */,
 				C3C3715F1AC56290004C28ED /* SpotsViewController.swift */,
@@ -140,6 +141,8 @@
 				CED77F391ADB20330048DC81 /* GeoLocationManager.swift */,
 				CED199831ADC5C3B00BF223E /* NearbySpotsViewController.swift */,
 				CED199851ADC66D200BF223E /* SpotDetailViewController.swift */,
+				C30A71411AB30282003B384F /* NewSpotController.swift */,
+				C3F38C751ADD11A50096DAA2 /* NewLocationViewController.swift */,
 			);
 			name = TrainSpot;
 			path = SpotApp;
@@ -301,6 +304,7 @@
 				C3BBFE671AD54F1C009E6EA7 /* Image.swift in Sources */,
 				CE3286301ADB0AE20072790B /* Location.swift in Sources */,
 				C3795A1C1AA85C5300DA9073 /* ViewController.swift in Sources */,
+				C3F38C761ADD11A50096DAA2 /* NewLocationViewController.swift in Sources */,
 				C34577051AD7BF13008A5E12 /* Serializable.swift in Sources */,
 				CED77F3A1ADB20330048DC81 /* GeoLocationManager.swift in Sources */,
 				C36BCCF11AD6BAA900FDC7CA /* User.swift in Sources */,

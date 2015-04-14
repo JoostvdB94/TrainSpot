@@ -11,27 +11,36 @@ import UIKit
 class SpotsViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource{
     var spotList = [Spot]();
 
+    required init!(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        var url = "http://compuplex.nl:10033/api/spots"
+        if let userKey = defaults.stringForKey("userKey") {
+            url = "http://compuplex.nl:10033/api/spots?owner=\(userKey)"
+        }
+        GetRequest.HTTPGetJSON(url, callback: {(data : [[String:AnyObject]], error: String?) -> Void in
+            
+            if error != nil {
+                println(error)
+            }else{
+                for (spotData) in data {
+                    let imageArray = spotData["image"] as! [NSString:NSString]
+                    let tmpImage = Image(newData: imageArray["data"]!, newFileExtension: imageArray["extension"]!)
+                    var tmpSpot = Spot(newName: spotData["name"] as! NSString, newDescription: spotData["description"] as! NSString, newLatitude: spotData["latitude"] as! Double, newLongitude: spotData["longitude"] as! Double, newImage: tmpImage)
+                    self.spotList.append(tmpSpot);
+                }
+            }
+            dispatch_async(dispatch_get_main_queue(),{
+                self.tableView!.reloadData()
+            });
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        });
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            GetRequest.HTTPGetJSON("http://compuplex.nl:10033/api/spots", callback: {(data : [[String:AnyObject]], error: String?) -> Void in
-                
-                if error != nil {
-                    println(error)
-                }else{
-                    for (spotData) in data {
-                        let imageArray = spotData["image"] as! [NSString:NSString]
-                        let tmpImage = Image(newData: imageArray["data"]!, newFileExtension: imageArray["extension"]!)
-                        var tmpSpot = Spot(newName: spotData["name"] as! NSString, newDescription: spotData["description"] as! NSString, newLatitude: spotData["latitude"] as! Double, newLongitude: spotData["longitude"] as! Double, newImage: tmpImage)
-                        self.spotList.append(tmpSpot);
-                    }
-                }
-                dispatch_async(dispatch_get_main_queue(),{
-                    self.tableView!.reloadData()
-                });
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            });
-        
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SpotCell");
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
